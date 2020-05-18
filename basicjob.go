@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"time"
 
 	"github.com/brotherlogic/goserver"
 	"github.com/brotherlogic/keystore/client"
@@ -70,6 +71,8 @@ func main() {
 	if err != nil {
 		return
 	}
+
+	server.RegisterRepeatingTask(server.runComputation, "run_computation", time.Second*5)
 
 	fmt.Printf("%v", server.Serve())
 }
