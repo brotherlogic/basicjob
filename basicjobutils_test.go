@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"testing"
 )
 
@@ -11,5 +12,9 @@ func InitTest() *Server {
 }
 
 func TestBasic(t *testing.T) {
-	doNothing()
+	s := InitTest()
+	err := s.runComputation(context.Background())
+	if err != nil {
+		t.Errorf("Bad run: %v", err)
+	}
 }
