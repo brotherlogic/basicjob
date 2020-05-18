@@ -54,7 +54,6 @@ func (s *Server) GetState() []*pbg.State {
 
 func main() {
 	var quiet = flag.Bool("quiet", false, "Show all output")
-	var init = flag.Bool("init", false, "Prep server")
 	flag.Parse()
 
 	//Turn off logging
