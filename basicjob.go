@@ -5,10 +5,8 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"time"
 
 	"github.com/brotherlogic/goserver"
-	"github.com/brotherlogic/keystore/client"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 
@@ -65,16 +63,13 @@ func main() {
 		log.SetOutput(ioutil.Discard)
 	}
 	server := Init()
-	server.GoServer.KSclient = *keystoreclient.GetClient(server.DialMaster)
 	server.PrepServer()
 	server.Register = server
 
-	err := server.RegisterServerV2("basicjob", false, false)
+	err := server.RegisterServerV2("basicjob", false, true)
 	if err != nil {
 		return
 	}
-
-	server.RegisterRepeatingTask(server.runComputation, "run_computation", time.Second*5)
 
 	fmt.Printf("%v", server.Serve())
 }
