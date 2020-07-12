@@ -72,7 +72,7 @@ func main() {
 		return
 	}
 
-	s.Log(fmt.Sprintf("Starting election"))
+	server.Log(fmt.Sprintf("Starting election"))
 	cancel, err := server.Elect()
 	if err != nil {
 		server.Log(fmt.Sprintf("Error performing election: %v", err))
