@@ -73,6 +73,7 @@ func main() {
 	}
 
 	server.Log(fmt.Sprintf("Starting election"))
+	time.Sleep(time.Second * 2)
 	cancel, err := server.Elect()
 	if err != nil {
 		server.Log(fmt.Sprintf("Error performing election: %v", err))
@@ -80,7 +81,7 @@ func main() {
 		return
 	}
 	server.Log(fmt.Sprintf("I have been elected"))
-	time.Sleep(time.Second * 5)
+	time.Sleep(time.Second * 6)
 	cancel()
 	server.Log(fmt.Sprintf("ELECTION COMPLETE"))
 
