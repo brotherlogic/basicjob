@@ -84,7 +84,7 @@ func main() {
 	server.Log(fmt.Sprintf("I have been elected"))
 	time.Sleep(time.Second * 6)
 	cancel()
-	server.Log(fmt.Sprintf("ELECTION COMPLETE"))
+	server.Log(fmt.Sprintf("ELECTION IS COMPLETE"))
 	time.Sleep(time.Second * 5)
 
 	fmt.Printf("%v", server.Serve())
