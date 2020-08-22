@@ -78,7 +78,6 @@ func main() {
 	if err != nil {
 		server.Log(fmt.Sprintf("Error performing election: %v", err))
 		time.Sleep(time.Second * 30)
-		fmt.Printf("Error: %v\n", err)
 		return
 	}
 	server.Log(fmt.Sprintf("I have been elected"))
