@@ -3,8 +3,10 @@ module github.com/brotherlogic/basicjob
 go 1.16
 
 require (
-	github.com/brotherlogic/githubcard v0.0.0-20230108093351-7efdf25f657d // indirect
-	github.com/brotherlogic/goserver v0.0.0-20230106225431-4d4abea9318a
-	golang.org/x/net v0.5.0
-	google.golang.org/grpc v1.51.0
+	github.com/brotherlogic/buildserver v0.0.0-20230412030517-3a5854741f94 // indirect
+	github.com/brotherlogic/githubcard v0.0.0-20230412001612-dd586ba8e890 // indirect
+	github.com/brotherlogic/goserver v0.0.0-20230330215506-65bad61eb180
+	github.com/prometheus/client_golang v1.15.0 // indirect
+	golang.org/x/net v0.9.0
+	google.golang.org/grpc v1.54.0
 )
